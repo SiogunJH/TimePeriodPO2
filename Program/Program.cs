@@ -1,4 +1,5 @@
 ﻿using TimeExtendedLib;
+using TimePeriodExtendedLib;
 
 namespace Program
 {
@@ -6,11 +7,12 @@ namespace Program
     { 
         public static void Main(string[] args)
         {
-            int h = 10;
-            int m = 2;
-            int s = 6;
-            var t = new Time(h,m,s);
-            Console.WriteLine(t);
+            var t1 = new Time(0, 0, 0, 500);
+            var tp = new TimePeriod(0, 0, 0, 600);
+            var t2 = t1 + tp;
+            Console.WriteLine(t1);
+            Console.WriteLine(tp);
+            Console.WriteLine(t2);
         }
     }
 }

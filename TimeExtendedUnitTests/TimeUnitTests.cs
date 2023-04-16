@@ -2,10 +2,10 @@ using System.Data;
 using TimeExtendedLib;
 using TimePeriodExtendedLib;
 
-namespace TimeUnitTests
+namespace TimeExtendedUnitTests
 {
     [TestClass]
-    public class TimeUnitTests
+    public class TimeExtendedUnitTests
     {
 
         #region Constructor Tests
@@ -240,7 +240,7 @@ namespace TimeUnitTests
         [DataRow(10, 10, 10, 10, 2, 2, 2, 2, 12, 12, 12, 12)]
         [DataRow(23, 59, 59, 999, 0, 0, 0, 1, 0, 0, 0, 0)]
         [DataRow(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
-        [DataRow(12, 30, 30, 500, 0, 30, 30, 500, 13, 1, 1, 0)]
+        [DataRow(0, 0, 0, 500, 0, 0, 0, 600, 0, 0, 1, 100)]
         public void Operator_Add(int h1, int m1, int s1, int ms1, int h2, int m2, int s2, int ms2, int h3, int m3, int s3, int ms3)
         {
             var t1 = new Time(h1, m1, s1, ms1);
@@ -253,7 +253,7 @@ namespace TimeUnitTests
         [DataRow(10, 10, 10, 10, 2, 2, 2, 2, 12, 12, 12, 12)]
         [DataRow(23, 59, 59, 999, 0, 0, 0, 1, 0, 0, 0, 0)]
         [DataRow(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
-        [DataRow(12, 30, 30, 500, 0, 30, 30, 500, 13, 1, 1, 0)]
+        [DataRow(0, 0, 0, 500, 0, 0, 0, 600, 0, 0, 1, 100)]
         public void Operator_Subtract(int h3, int m3, int s3, int ms3, int h2, int m2, int s2, int ms2, int h1, int m1, int s1, int ms1)
         {
             var t1 = new Time(h1, m1, s1, ms1);

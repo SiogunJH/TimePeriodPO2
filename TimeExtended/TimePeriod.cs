@@ -21,17 +21,17 @@ namespace TimePeriodExtendedLib
         {
             get => (int)(miliseconds / 1000 / 60 / 60);
         }
-        public byte Minute
+        public int Minute
         {
-            get => (byte)(miliseconds / 1000 / 60 % 60);
+            get => (int)(miliseconds / 1000 / 60 % 60);
         }
-        public byte Second
+        public int Second
         {
-            get => (byte)(miliseconds / 1000 % 60);
+            get => (int)(miliseconds / 1000 % 60);
         }
-        public byte Milisecond
+        public int Milisecond
         {
-            get => (byte)(miliseconds % 1000);
+            get => (int)(miliseconds % 1000);
         }
 
         #endregion

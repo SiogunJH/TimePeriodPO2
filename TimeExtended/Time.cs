@@ -8,7 +8,7 @@ namespace TimeExtendedLib
     {
         #region Fields
 
-        private int miliseconds = 0; // 1 Day = 86 400 000 Miliseconds
+        private long miliseconds = 0; // 1 Day = 86 400 000 Miliseconds
 
         #endregion
 
@@ -41,7 +41,7 @@ namespace TimeExtendedLib
             if (hour >= 24 || minute >= 60 || second >= 60 || milisecond >= 1000) throw new ArgumentOutOfRangeException();
             if (hour < 0 || minute < 0 || second < 0 || milisecond < 0) throw new ArgumentOutOfRangeException();
 
-            miliseconds = (int)(milisecond + (second*1000) + (minute * 1000 * 60) + (hour * 1000 * 60 * 60));
+            miliseconds = (long)(milisecond + (second*1000) + (minute * 1000 * 60) + (hour * 1000 * 60 * 60));
         }
         public Time(int? hour, int? minute, int? second) : this(hour, minute, second, 0) { }
         public Time(int? hour, int? minute) : this(hour, minute, 0) { }
@@ -115,22 +115,22 @@ namespace TimeExtendedLib
         public static bool operator >=(Time t1, Time t2) => t1.CompareTo(t2) >= 0;
         public static Time operator +(Time t, TimePeriod tp)
         {
-            int tTotal = t.Milisecond + (t.Second * 1000) + (t.Minute * 1000 * 60) + (t.Hour * 1000 * 60 * 60);
+            long tTotal = t.Milisecond + (t.Second * 1000) + (t.Minute * 1000 * 60) + (t.Hour * 1000 * 60 * 60);
             long tpTotal = tp.Milisecond + (tp.Second * 1000) + (tp.Minute * 1000 * 60) + (tp.Hour * 1000 * 60 * 60);
             
-            tTotal = (int)(tTotal + tpTotal)%(24*60*60*1000); //Restrict the range to max 23:59:59
-            return new Time(tTotal / 60 / 60 / 1000, tTotal / 1000 / 60 % 60, tTotal / 1000 % 60, tTotal % 1000);
+            tTotal = (tTotal + tpTotal)%(24*60*60*1000); //Restrict the range to max 23:59:59
+            return new Time((int)(tTotal / 1000 / 60 / 60), (int)(tTotal / 1000 / 60 % 60), (int)(tTotal / 1000 % 60), (int)(tTotal % 1000));
         }
         public static Time operator -(Time t, TimePeriod tp)
         {
-            int tTotal = t.Milisecond + (t.Second * 1000) + (t.Minute * 1000 * 60) + (t.Hour * 1000 * 60 * 60);
+            long tTotal = t.Milisecond + (t.Second * 1000) + (t.Minute * 1000 * 60) + (t.Hour * 1000 * 60 * 60);
             long tpTotal = tp.Milisecond + (tp.Second * 1000) + (tp.Minute * 1000 * 60) + (tp.Hour * 1000 * 60 * 60);
 
-            tTotal = (int)(tTotal - tpTotal);
+            tTotal = (tTotal - tpTotal);
             while (tTotal < 0)
                 tTotal += 24 * 60 * 60 * 1000;
-            
-            return new Time(tTotal / 1000 / 60 / 60, tTotal / 1000 / 60 % 60, tTotal / 1000 % 60, tTotal % 1000);
+
+            return new Time((int)(tTotal / 1000 / 60 / 60), (int)(tTotal / 1000 / 60 % 60), (int)(tTotal / 1000 % 60), (int)(tTotal % 1000));
         }
 
         #endregion
