@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Time", "Time\Time.csproj", "{0E94C410-F3C3-4F46-94E2-F7950048DE64}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Time", "Time\Time.csproj", "{0E94C410-F3C3-4F46-94E2-F7950048DE64}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeUnitTests", "TimeUnitTests\TimeUnitTests.csproj", "{F28E9A15-96FC-491C-889F-84F985B299A0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeUnitTests", "TimeUnitTests\TimeUnitTests.csproj", "{F28E9A15-96FC-491C-889F-84F985B299A0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Program", "Program\Program.csproj", "{84157BA6-4F92-4E23-AB3F-640AD9ED7140}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Program", "Program\Program.csproj", "{84157BA6-4F92-4E23-AB3F-640AD9ED7140}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeExtended", "TimeExtended\TimeExtended.csproj", "{B599CD5B-46FD-43B6-AFD3-FF370AE7E726}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeExtended", "TimeExtended\TimeExtended.csproj", "{B599CD5B-46FD-43B6-AFD3-FF370AE7E726}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeExtendedUnitTests", "TimeExtendedUnitTests\TimeExtendedUnitTests.csproj", "{D46D4949-9E75-4DB5-83F7-D88BB9A4BC33}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{B599CD5B-46FD-43B6-AFD3-FF370AE7E726}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B599CD5B-46FD-43B6-AFD3-FF370AE7E726}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B599CD5B-46FD-43B6-AFD3-FF370AE7E726}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D46D4949-9E75-4DB5-83F7-D88BB9A4BC33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D46D4949-9E75-4DB5-83F7-D88BB9A4BC33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D46D4949-9E75-4DB5-83F7-D88BB9A4BC33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D46D4949-9E75-4DB5-83F7-D88BB9A4BC33}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
