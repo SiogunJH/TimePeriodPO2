@@ -24,7 +24,8 @@ namespace Program
             ExitMessage();
         }
 
-        private static void Analyze(string? instruction) {
+        private static void Analyze(string? instruction)
+        {
             if (instruction is null || instruction == "") return;
 
             string command = instruction.Split(' ')[0].ToUpper();
@@ -55,13 +56,14 @@ namespace Program
         {
             ConsoleColor consoleColor = Console.ForegroundColor; // previous color
             StringBuilder sb = new StringBuilder();
-            
+
             Console.ForegroundColor = ConsoleColor.DarkCyan;
             sb.AppendLine("Welcome!");
             sb.AppendLine("In this app you can add Marathon members and compare their times.");
             sb.AppendLine("To do so, you can use the following commands:");
             sb.AppendLine();
             Console.WriteLine(sb);
+            sb.Clear();
 
             Console.ForegroundColor = ConsoleColor.Cyan;
             sb.AppendLine("ADD <Name> <Surname> <Time hh:mm:ss> - adds new entry with a new member");
